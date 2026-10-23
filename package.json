@@ -1,0 +1,13 @@
+{
+  "name": "assurance-escrow",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "pytest -q test_assurance_escrow_e2e.py",
+    "deploy": "node scripts/deploy.mjs",
+    "e2e:studionet": "node scripts/live_e2e.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "^1.1.8"
+  }
+}

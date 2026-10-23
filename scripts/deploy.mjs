@@ -1,0 +1,16 @@
+import {mkdir,readFile,writeFile} from "node:fs/promises";
+import {createHash} from "node:crypto";
+import {createAccount,createClient} from "genlayer-js";
+import {studionet} from "genlayer-js/chains";
+import {ExecutionResult,TransactionStatus} from "genlayer-js/types";
+const key=process.env.ASSURANCE_ESCROW_DEPLOYER_KEY;if(!key)throw Error("ASSURANCE_ESCROW_DEPLOYER_KEY is required");
+const releaseId=process.env.ASSURANCE_ESCROW_RELEASE_ID;
+if(!/^[a-z0-9][a-z0-9-]{0,63}$/.test(releaseId||""))throw Error("ASSURANCE_ESCROW_RELEASE_ID must be a lowercase release identifier");
+const client=createClient({chain:studionet,account:createAccount(key)}),code=await readFile(new URL("../assurance_escrow.py",import.meta.url),"utf8"),sourceSha256=createHash("sha256").update(code,"utf8").digest("hex"),startedAt=new Date().toISOString();
+const txHash=process.env.ASSURANCE_ESCROW_DEPLOYMENT_TX||await client.deployContract({code,args:[]});console.log(`${process.env.ASSURANCE_ESCROW_DEPLOYMENT_TX?"deployment resumed":"deployment submitted"} ${txHash}`);
+const receipt=await client.waitForTransactionReceipt({hash:txHash,status:TransactionStatus.FINALIZED,retries:180,interval:5000});
+const consensus=receipt.result_name??receipt.resultName,execution=receipt.tx_execution_result_name??receipt.txExecutionResultName,contractAddress=receipt.data?.contract_address??receipt.data?.contractAddress;
+const transaction=await client.getTransaction({hash:txHash}),txExecutionHash=transaction.tx_execution_hash,executionVerified=execution===ExecutionResult.FINISHED_WITH_RETURN||Boolean(txExecutionHash&&transaction.statusName==="FINALIZED"),deployedSource=Buffer.from(transaction.data?.contract_code||"","base64"),deployedSourceSha256=createHash("sha256").update(deployedSource).digest("hex");
+if(consensus!=="MAJORITY_AGREE")throw Error(`deployment consensus ${consensus}`);if(!executionVerified)throw Error(`deployment execution ${execution||"missing"}`);if(!contractAddress)throw Error("finalized deployment returned no contract address");if(deployedSourceSha256!==sourceSha256)throw Error("deployed source differs from local source");
+const record={schema:"assurance-escrow.deployment/v1",releaseId,network:"GenLayer Studionet",chainId:61999,source:"assurance_escrow.py",sourceSha256,deployedSourceSha256,sourceBytes:Buffer.byteLength(code,"utf8"),sourceEquivalent:deployedSourceSha256===sourceSha256,sourceEquivalence:"The SHA-256 is computed over the exact local UTF-8 source and over finalized transaction contract_code decoded from base64.",deployer:client.account.address,startedAt,finalizedAt:new Date().toISOString(),txHash,contractAddress,consensus,execution:execution||"FINALIZED_WITH_EXECUTION_HASH",txExecutionHash,transactionStatus:transaction.statusName},artifact=new URL(`../artifacts/deployment.${releaseId}.studionet.json`,import.meta.url);await mkdir(new URL("../artifacts",import.meta.url),{recursive:true});await writeFile(artifact,JSON.stringify(record,null,2)+"\n");console.log(JSON.stringify(record,null,2));
+

@@ -9,6 +9,8 @@ The contract begins with the supplied ProofRail implementation's hardened escrow
 - Counterevidence schema: `assurance-escrow.counterevidence/v1`
 - Attestation schema: `assurance-escrow.independent-attestation/v1`
 
+For safe migration, the contract also accepts the predecessor's frozen `proofrail.*` evidence schemas. This is intentionally limited to evidence parsing; the deployed contract remains `AssuranceEscrow` and preserves the full validation, independent-source, and accounting rules.
+
 ## Run the end-to-end suite
 
 ```bash

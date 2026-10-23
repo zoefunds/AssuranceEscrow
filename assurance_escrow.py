@@ -72,13 +72,13 @@ class AssuranceEscrow(gl.Contract):
  def _validate_policy(self,evidence_json:str,outcomes_json:str)->dict:
   evidence=json.loads(evidence_json); outcomes=json.loads(outcomes_json)
   assert isinstance(evidence,dict) and set(evidence)=={"schema","obligation_id","observed_from","observed_until","source_rule","counter_rule","semantic_rule","sources","counterevidence"}
-  assert evidence["schema"]=="assurance-escrow.evidence-policy/v1" and type(evidence["observed_from"]) is int and type(evidence["observed_until"]) is int and 0<=evidence["observed_from"]<evidence["observed_until"]<2**64
+  assert evidence["schema"] in ("assurance-escrow.evidence-policy/v1","proofrail.evidence-policy/v7") and type(evidence["observed_from"]) is int and type(evidence["observed_until"]) is int and 0<=evidence["observed_from"]<evidence["observed_until"]<2**64
   assert isinstance(evidence["obligation_id"],str) and 0<len(evidence["obligation_id"])<=200,"a frozen canonical obligation identifier is required"
   rule=evidence["source_rule"];counter_rule=evidence["counter_rule"]
   for x in (rule,counter_rule):assert isinstance(x,dict) and set(x)=={"min_sources","min_verified","min_agreement"} and type(x["min_sources"]) is int and type(x["min_verified"]) is int and type(x["min_agreement"]) is int and 2<=x["min_agreement"]<=x["min_verified"]<=x["min_sources"]<=5
   semantic=evidence["semantic_rule"];assert isinstance(semantic,dict) and set(semantic)=={"kind","threshold_bps","fulfilled_code","breached_code"} and semantic["kind"]=="uptime_bps" and type(semantic["threshold_bps"]) is int and 1<=semantic["threshold_bps"]<=10000 and isinstance(semantic["fulfilled_code"],str) and isinstance(semantic["breached_code"],str) and semantic["fulfilled_code"]!=semantic["breached_code"]
   sources=evidence["sources"];assert isinstance(sources,list) and rule["min_sources"]<=len(sources)<=5
-  counter=evidence["counterevidence"];assert isinstance(counter,dict) and set(counter)=={"schema","sources"} and counter["schema"]=="assurance-escrow.counterevidence/v1"
+  counter=evidence["counterevidence"];assert isinstance(counter,dict) and set(counter)=={"schema","sources"} and counter["schema"] in ("assurance-escrow.counterevidence/v1","proofrail.counterevidence/v1")
   counter_sources=counter["sources"];assert isinstance(counter_sources,list) and counter_rule["min_sources"]<=len(counter_sources)<=5
   domains=[];ids=[];authorities=[];source_ids=[]
   for s in sources+counter_sources:
@@ -115,7 +115,7 @@ class AssuranceEscrow(gl.Contract):
      if digest!=s["content_sha256"]:p["status"]=TAMPERED;provenance.append(p);continue
      try:
       artifact=json.loads(raw);required={"schema","publisher_id","authority_id","source_id","obligation_id","subject","content_version","outcome","observed_from","observed_until","statement","facts"}
-      assert isinstance(artifact,dict) and set(artifact)==required and artifact["schema"]=="assurance-escrow.independent-attestation/v1","invalid evidence schema"
+      assert isinstance(artifact,dict) and set(artifact)==required and artifact["schema"] in ("assurance-escrow.independent-attestation/v1","proofrail.independent-attestation/v3"),"invalid evidence schema"
       assert artifact["publisher_id"]==s["publisher_id"] and artifact["authority_id"]==s["authority_id"] and artifact["source_id"]==s["source_id"],"evidence publisher mismatch"
       assert artifact["obligation_id"]==spec["obligation_id"],"evidence does not concern this rail's frozen obligation"
       assert artifact["content_version"]==s["content_version"] and type(artifact["observed_from"]) is int and type(artifact["observed_until"]) is int and artifact["observed_from"]==s["observed_from"] and artifact["observed_until"]==s["observed_until"],"evidence metadata mismatch"
