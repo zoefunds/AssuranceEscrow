@@ -5,7 +5,7 @@
 Run:
 
 ```bash
-pytest -q test_assurance_escrow_e2e.py
+pytest -q tests/direct/test_assurance_escrow_e2e.py
 ```
 
 The current suite contains 43 tests. It executes the actual `AssuranceEscrow` source in GenLayer Direct Mode and mocks only the external web boundary. Coverage includes:

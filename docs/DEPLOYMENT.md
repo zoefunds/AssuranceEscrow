@@ -25,7 +25,7 @@ ASSURANCE_ESCROW_RELEASE_ID=your-release-id \
 npm run deploy
 ```
 
-The script rejects a deployment unless it finalizes with majority consensus, has execution evidence, returns a contract address, and exposes source bytes whose SHA-256 matches `assurance_escrow.py`.
+The script rejects a deployment unless it finalizes with majority consensus, has execution evidence, returns a contract address, and exposes source bytes whose SHA-256 matches `contracts/assurance_escrow.py`.
 
 ## Run a live lifecycle
 

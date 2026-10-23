@@ -3,6 +3,6 @@ networks:
   studionet:
     leader_only: false
 paths:
-  contracts: .
+  contracts: contracts
   artifacts: .gltest-artifacts
 environment: .env
