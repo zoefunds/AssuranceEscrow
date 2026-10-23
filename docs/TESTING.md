@@ -14,7 +14,7 @@ The current suite contains 43 tests. It executes the actual `AssuranceEscrow` so
 - frozen counterevidence, both challenger roles, bond routing, and dispute-time substitution rejection;
 - DID, URL, HTTP-status, digest, metadata, schema, identity, and measurement-fact validation;
 - prompt-injection resistance and publisher-outcome non-authority;
-- retries, validator disagreement, recovery paths, replay protection, transfer failure atomicity, and conservation;
+- retries, validator disagreement, recovery paths, replay protection, transfer failure atomicity, and conservation.
 
 ## Verified Studionet E2E
 

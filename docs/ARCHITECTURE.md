@@ -14,7 +14,7 @@
 
 - Every DID document and evidence object is pinned by SHA-256, HTTP status, exact HTTPS URL, publisher identity, service path, version, and observation window.
 - Sources must be distinct across both panels by publisher domain, DID, authority ID, and source ID.
-- The current policy accepts two primary sources with a 2-of-2 agreement and three counter sources with at least 3 verified sources and 2 agreeing sources. A strict majority of all verified sources is also required.
+- A frozen policy chooses two to five sources for each panel and requires at least two agreeing, verified sources. A strict majority of all verified sources is also required. The v2 public run used a 2-of-2 primary panel and a 3-of-3 counter panel.
 - Uptime is calculated from structured facts. Publisher-declared outcomes and free-text statements do not choose the payout.
 - Receipts persist the result, source counts, provenance, and a digest of the evidence policy plus the payout table.
 - Global accounting enforces `funded = locked + paid + returned`; settlements run under a transfer callback guard.
