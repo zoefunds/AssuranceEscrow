@@ -1,0 +1,22 @@
+{
+  "schema": "assurance-escrow.deployment/v1",
+  "releaseId": "assurance-escrow-v2",
+  "network": "GenLayer Studionet",
+  "chainId": 61999,
+  "source": "assurance_escrow.py",
+  "sourceSha256": "97d0bc0052ee35936696281d3df4aeffa8e7f7d94a401b374bb67e1d0178aff4",
+  "deployedSourceSha256": "97d0bc0052ee35936696281d3df4aeffa8e7f7d94a401b374bb67e1d0178aff4",
+  "sourceBytes": 21220,
+  "sourceEquivalent": true,
+  "sourceEquivalence": "The SHA-256 is computed over the exact local UTF-8 source and over finalized transaction contract_code decoded from base64.",
+  "deployer": "0x9e75694e204B03997D55B5A664a924aDaE3F43D1",
+  "startedAt": "2026-10-23T12:00:30.158Z",
+  "finalizedAt": "2026-10-23T12:01:12.332Z",
+  "txHash": "0x8e5b4ce00ac4657ed26471793203eb4d544cccc2dadcf84100db1f1f39c37e9b",
+  "contractAddress": "0xf3D6D3d4ae9cdA138EE7cF21207EBD8e6976f358",
+  "consensus": "MAJORITY_AGREE",
+  "execution": "FINALIZED_WITH_EXECUTION_HASH",
+  "txExecutionHash": "0xac684ea0210461ecc6797cbc3a71f0d6ed82080026abda52555f545cd64c3211",
+  "transactionStatus": "FINALIZED"
+}
+

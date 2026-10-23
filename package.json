@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "pytest -q test_assurance_escrow_e2e.py",
+    "generate-evidence": "node scripts/generate_evidence.mjs",
     "deploy": "node scripts/deploy.mjs",
     "e2e:studionet": "node scripts/live_e2e.mjs"
   },

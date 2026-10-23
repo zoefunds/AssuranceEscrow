@@ -26,3 +26,9 @@ ASSURANCE_ESCROW_CONTRACT_ADDRESS=... ASSURANCE_ESCROW_ISSUER_KEY=... ASSURANCE_
 ```
 
 See [architecture](docs/ARCHITECTURE.md), [deployment](docs/DEPLOYMENT.md), [testing](docs/TESTING.md), and [evidence notes](docs/EVIDENCE.md) for current details and verification limits.
+
+## Current verified release
+
+`assurance-escrow-v2` is deployed to GenLayer Studionet (chain ID `61999`) at `0xf3D6D3d4ae9cdA138EE7cF21207EBD8e6976f358`. The finalized deployment reached `MAJORITY_AGREE` and returned source bytes whose SHA-256 exactly matches this checkout: `97d0bc0052ee35936696281d3df4aeffa8e7f7d94a401b374bb67e1d0178aff4`.
+
+Its real lifecycle record shows a 2-of-2 primary `FULFILLED` result, a 3-of-3 counterevidence `BREACHED` result, a 0.01 GEN recipient payout, and zero final locked funds or bond. See [deployment evidence](evidence/deployment.assurance-escrow-v2.studionet.json) and [live E2E evidence](evidence/live-e2e-assurance-escrow-v2-4.studionet.json).

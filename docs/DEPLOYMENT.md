@@ -1,5 +1,19 @@
 # Deployment
 
+## Current verified release
+
+| Field | Value |
+| --- | --- |
+| Network | GenLayer Studionet |
+| Chain ID | `61999` |
+| Release | `assurance-escrow-v2` |
+| Contract | `0xf3D6D3d4ae9cdA138EE7cF21207EBD8e6976f358` |
+| Deploy transaction | `0x8e5b4ce00ac4657ed26471793203eb4d544cccc2dadcf84100db1f1f39c37e9b` |
+| Consensus | `MAJORITY_AGREE` |
+| Source SHA-256 | `97d0bc0052ee35936696281d3df4aeffa8e7f7d94a401b374bb67e1d0178aff4` |
+
+The complete deployment receipt is committed in [deployment evidence](../evidence/deployment.assurance-escrow-v2.studionet.json). It verifies the finalized transaction's returned source bytes match the source checked into this repository.
+
 ## Deploy a new release
 
 Use a funded account and a new lowercase release ID. Never commit secret keys.

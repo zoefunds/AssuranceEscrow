@@ -1,0 +1,329 @@
+{
+  "schema": "assurance-escrow.live-verification/v1",
+  "releaseId": "assurance-escrow-v2",
+  "scenario": 4,
+  "scenarioName": "Measured API uptime obligation",
+  "expectedOutcome": "BREACHED",
+  "network": "GenLayer Studionet",
+  "chainId": 61999,
+  "contractAddress": "0xf3D6D3d4ae9cdA138EE7cF21207EBD8e6976f358",
+  "railId": 1,
+  "issuer": "0x86640E27BB18E467aE2193A2FF680375653c69FC",
+  "recipient": "0x53705Bb2B34ff7CEcC93F79a1D91aDa1185D87Dd",
+  "evidencePolicy": {
+    "schema": "assurance-escrow.evidence-policy/v1",
+    "obligation_id": "urn:assurance-escrow:obligation:assurance-escrow-v2:uptime:1792749538-1792753138",
+    "observed_from": 1792749538,
+    "observed_until": 1792753138,
+    "source_rule": {
+      "min_sources": 2,
+      "min_verified": 2,
+      "min_agreement": 2
+    },
+    "counter_rule": {
+      "min_sources": 3,
+      "min_verified": 3,
+      "min_agreement": 2
+    },
+    "semantic_rule": {
+      "kind": "uptime_bps",
+      "threshold_bps": 9990,
+      "fulfilled_code": "FULFILLED",
+      "breached_code": "BREACHED"
+    },
+    "sources": [
+      {
+        "source_id": "publisher-1",
+        "authority_id": "urn:assurance-escrow:authority:1",
+        "url": "https://source-1-inky.vercel.app/evidence/9e6b0cc65b1d8209cbe56e1b583720ede0631628782d3206d56cb230a24819e0.json",
+        "publisher_id": "did:web:source-1-inky.vercel.app",
+        "publisher_domain": "source-1-inky.vercel.app",
+        "did_sha256": "83e00096ff50d3511530f4843a55b5aba22c8ce14e1f54dc3a82c8a9c5ee3b66",
+        "did_http_status": 200,
+        "service_path": "/evidence/",
+        "content_version": "assurance-escrow-v2/uptime-primary-1",
+        "content_sha256": "9e6b0cc65b1d8209cbe56e1b583720ede0631628782d3206d56cb230a24819e0",
+        "evidence_http_status": 200,
+        "observed_from": 1792749538,
+        "observed_until": 1792753138
+      },
+      {
+        "source_id": "publisher-2",
+        "authority_id": "urn:assurance-escrow:authority:2",
+        "url": "https://source-2-ten.vercel.app/evidence/e6257c42dcf84e86d64b0d7c624489b218b3702444e9465be1e6e0b86da03e5b.json",
+        "publisher_id": "did:web:source-2-ten.vercel.app",
+        "publisher_domain": "source-2-ten.vercel.app",
+        "did_sha256": "c3f38772e6e7449d3579b411cb414a48d108191edb50b6c611947ce051a7bf65",
+        "did_http_status": 200,
+        "service_path": "/evidence/",
+        "content_version": "assurance-escrow-v2/uptime-primary-2",
+        "content_sha256": "e6257c42dcf84e86d64b0d7c624489b218b3702444e9465be1e6e0b86da03e5b",
+        "evidence_http_status": 200,
+        "observed_from": 1792749538,
+        "observed_until": 1792753138
+      }
+    ],
+    "counterevidence": {
+      "schema": "assurance-escrow.counterevidence/v1",
+      "sources": [
+        {
+          "source_id": "publisher-3",
+          "authority_id": "urn:assurance-escrow:authority:3",
+          "url": "https://source-3-five.vercel.app/evidence/2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4.json",
+          "publisher_id": "did:web:source-3-five.vercel.app",
+          "publisher_domain": "source-3-five.vercel.app",
+          "did_sha256": "147ba1d69071eb5a5faced97cf15932ee2d588b6182e5a32162731374a417464",
+          "did_http_status": 200,
+          "service_path": "/evidence/",
+          "content_version": "assurance-escrow-v2/uptime-counter-3",
+          "content_sha256": "2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4",
+          "evidence_http_status": 200,
+          "observed_from": 1792749538,
+          "observed_until": 1792753138
+        },
+        {
+          "source_id": "publisher-4",
+          "authority_id": "urn:assurance-escrow:authority:4",
+          "url": "https://source-4-kappa.vercel.app/evidence/067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5.json",
+          "publisher_id": "did:web:source-4-kappa.vercel.app",
+          "publisher_domain": "source-4-kappa.vercel.app",
+          "did_sha256": "3f6c2551db50e0eebbd18c001d04caed92d042d38142fac783a653741484fa84",
+          "did_http_status": 200,
+          "service_path": "/evidence/",
+          "content_version": "assurance-escrow-v2/uptime-counter-4",
+          "content_sha256": "067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5",
+          "evidence_http_status": 200,
+          "observed_from": 1792749538,
+          "observed_until": 1792753138
+        },
+        {
+          "source_id": "publisher-5",
+          "authority_id": "urn:assurance-escrow:authority:5",
+          "url": "https://source-5-three.vercel.app/evidence/0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775.json",
+          "publisher_id": "did:web:source-5-three.vercel.app",
+          "publisher_domain": "source-5-three.vercel.app",
+          "did_sha256": "0ffa0ed89a9b86599c8ed5fbc0cffd06127c15c48c088d5f7895facba1824068",
+          "did_http_status": 200,
+          "service_path": "/evidence/",
+          "content_version": "assurance-escrow-v2/uptime-counter-5",
+          "content_sha256": "0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775",
+          "evidence_http_status": 200,
+          "observed_from": 1792749538,
+          "observed_until": 1792753138
+        }
+      ]
+    }
+  },
+  "counterevidence": {
+    "schema": "assurance-escrow.counterevidence/v1",
+    "sources": [
+      {
+        "source_id": "publisher-3",
+        "authority_id": "urn:assurance-escrow:authority:3",
+        "url": "https://source-3-five.vercel.app/evidence/2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4.json",
+        "publisher_id": "did:web:source-3-five.vercel.app",
+        "publisher_domain": "source-3-five.vercel.app",
+        "did_sha256": "147ba1d69071eb5a5faced97cf15932ee2d588b6182e5a32162731374a417464",
+        "did_http_status": 200,
+        "service_path": "/evidence/",
+        "content_version": "assurance-escrow-v2/uptime-counter-3",
+        "content_sha256": "2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4",
+        "evidence_http_status": 200,
+        "observed_from": 1792749538,
+        "observed_until": 1792753138
+      },
+      {
+        "source_id": "publisher-4",
+        "authority_id": "urn:assurance-escrow:authority:4",
+        "url": "https://source-4-kappa.vercel.app/evidence/067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5.json",
+        "publisher_id": "did:web:source-4-kappa.vercel.app",
+        "publisher_domain": "source-4-kappa.vercel.app",
+        "did_sha256": "3f6c2551db50e0eebbd18c001d04caed92d042d38142fac783a653741484fa84",
+        "did_http_status": 200,
+        "service_path": "/evidence/",
+        "content_version": "assurance-escrow-v2/uptime-counter-4",
+        "content_sha256": "067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5",
+        "evidence_http_status": 200,
+        "observed_from": 1792749538,
+        "observed_until": 1792753138
+      },
+      {
+        "source_id": "publisher-5",
+        "authority_id": "urn:assurance-escrow:authority:5",
+        "url": "https://source-5-three.vercel.app/evidence/0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775.json",
+        "publisher_id": "did:web:source-5-three.vercel.app",
+        "publisher_domain": "source-5-three.vercel.app",
+        "did_sha256": "0ffa0ed89a9b86599c8ed5fbc0cffd06127c15c48c088d5f7895facba1824068",
+        "did_http_status": 200,
+        "service_path": "/evidence/",
+        "content_version": "assurance-escrow-v2/uptime-counter-5",
+        "content_sha256": "0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775",
+        "evidence_http_status": 200,
+        "observed_from": 1792749538,
+        "observed_until": 1792753138
+      }
+    ]
+  },
+  "criterion": "For the frozen 2026-10-20 13:50–14:50 UTC observation period, classify FULFILLED only when measured uptime is at least 99.90% (9,990 basis points); otherwise classify BREACHED. Calculate uptime from total_seconds and unavailable_seconds. Publisher outcome declarations and statement instructions are non-authoritative.",
+  "outcomes": [
+    {
+      "code": "FULFILLED",
+      "description": "Measured uptime is at least the frozen 9,990-basis-point threshold.",
+      "payout_bps": 0
+    },
+    {
+      "code": "BREACHED",
+      "description": "Measured uptime is below the frozen 9,990-basis-point threshold.",
+      "payout_bps": 10000
+    }
+  ],
+  "transactions": [
+    {
+      "label": "open independently sourced production rail",
+      "hash": "0x282b454a0400d0748ce5107171da1852a7b6fa49b3477ffb47880c754b18bd1c",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINALIZED_WITH_EXECUTION_HASH",
+      "executionHash": "0xa287e803ed0d67dac4ed231577dd377b716411f58c8029ec49531ab514b77cd4",
+      "finalizedAt": "2026-10-23T12:02:11.022Z"
+    },
+    {
+      "label": "lodge named-recipient claim",
+      "hash": "0xdca6ca69b618e42e8d3cf3b9cfd1ae2fac38c5c21771526d2e1120311d1ef18c",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINALIZED_WITH_EXECUTION_HASH",
+      "executionHash": "0x35b5a08f8c509e6670af8894067f509fb9992da500d1b9d2fd976befdd281447",
+      "finalizedAt": "2026-10-23T12:02:50.376Z"
+    },
+    {
+      "label": "primary evidence review round 1",
+      "hash": "0xedf79d55056a92ef2c7602248176c640c79eaae93ec74068f373e8b7fc169ae1",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINALIZED_WITH_EXECUTION_HASH",
+      "executionHash": "0x5fe0b7206223e8360078bc9d1aac1c0a966fb8d20b38ca61ae4f916b2d5bc49d",
+      "finalizedAt": "2026-10-23T12:03:31.364Z"
+    },
+    {
+      "label": "bonded counterevidence challenge",
+      "hash": "0x5734919a2e610d3723a66c969be42881b35e0a601e95af733cdee5d57486dd2b",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINALIZED_WITH_EXECUTION_HASH",
+      "executionHash": "0x5fe0b7206223e8360078bc9d1aac1c0a966fb8d20b38ca61ae4f916b2d5bc49d",
+      "finalizedAt": "2026-10-23T12:04:12.354Z"
+    },
+    {
+      "label": "counterevidence review round 1",
+      "hash": "0x95643562e0ab784e3e5afde3fa2ce6a1638443f37d7ec6c7bdb14be3d8a70b07",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINALIZED_WITH_EXECUTION_HASH",
+      "executionHash": "0x734fcfd14db5ce3031c7631372a57afd246c7a34cbe3aeb7f3e610cec3d510f5",
+      "finalizedAt": "2026-10-23T12:04:57.096Z"
+    }
+  ],
+  "provisional": {
+    "attempts": 1,
+    "bond": 0,
+    "challenge_reason": "",
+    "challenge_until": 1792929772,
+    "challenger": "0x0000000000000000000000000000000000000000",
+    "claimed_at": 1792756932,
+    "closes_at": 1792929687,
+    "counterevidence_json": "{\"schema\": \"assurance-escrow.counterevidence/v1\", \"sources\": [{\"authority_id\": \"urn:assurance-escrow:authority:3\", \"content_sha256\": \"2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4\", \"content_version\": \"assurance-escrow-v2/uptime-counter-3\", \"did_http_status\": 200, \"did_sha256\": \"147ba1d69071eb5a5faced97cf15932ee2d588b6182e5a32162731374a417464\", \"evidence_http_status\": 200, \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_domain\": \"source-3-five.vercel.app\", \"publisher_id\": \"did:web:source-3-five.vercel.app\", \"service_path\": \"/evidence/\", \"source_id\": \"publisher-3\", \"url\": \"https://source-3-five.vercel.app/evidence/2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4.json\"}, {\"authority_id\": \"urn:assurance-escrow:authority:4\", \"content_sha256\": \"067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5\", \"content_version\": \"assurance-escrow-v2/uptime-counter-4\", \"did_http_status\": 200, \"did_sha256\": \"3f6c2551db50e0eebbd18c001d04caed92d042d38142fac783a653741484fa84\", \"evidence_http_status\": 200, \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_domain\": \"source-4-kappa.vercel.app\", \"publisher_id\": \"did:web:source-4-kappa.vercel.app\", \"service_path\": \"/evidence/\", \"source_id\": \"publisher-4\", \"url\": \"https://source-4-kappa.vercel.app/evidence/067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5.json\"}, {\"authority_id\": \"urn:assurance-escrow:authority:5\", \"content_sha256\": \"0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775\", \"content_version\": \"assurance-escrow-v2/uptime-counter-5\", \"did_http_status\": 200, \"did_sha256\": \"0ffa0ed89a9b86599c8ed5fbc0cffd06127c15c48c088d5f7895facba1824068\", \"evidence_http_status\": 200, \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_domain\": \"source-5-three.vercel.app\", \"publisher_id\": \"did:web:source-5-three.vercel.app\", \"service_path\": \"/evidence/\", \"source_id\": \"publisher-5\", \"url\": \"https://source-5-three.vercel.app/evidence/0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775.json\"}]}",
+    "criterion": "For the frozen 2026-10-20 13:50–14:50 UTC observation period, classify FULFILLED only when measured uptime is at least 99.90% (9,990 basis points); otherwise classify BREACHED. Calculate uptime from total_seconds and unavailable_seconds. Publisher outcome declarations and statement instructions are non-authoritative.",
+    "dispute_deadline": 0,
+    "evidence_json": "{\"schema\":\"assurance-escrow.evidence-policy/v1\",\"obligation_id\":\"urn:assurance-escrow:obligation:assurance-escrow-v2:uptime:1792749538-1792753138\",\"observed_from\":1792749538,\"observed_until\":1792753138,\"source_rule\":{\"min_sources\":2,\"min_verified\":2,\"min_agreement\":2},\"counter_rule\":{\"min_sources\":3,\"min_verified\":3,\"min_agreement\":2},\"semantic_rule\":{\"kind\":\"uptime_bps\",\"threshold_bps\":9990,\"fulfilled_code\":\"FULFILLED\",\"breached_code\":\"BREACHED\"},\"sources\":[{\"source_id\":\"publisher-1\",\"authority_id\":\"urn:assurance-escrow:authority:1\",\"url\":\"https://source-1-inky.vercel.app/evidence/9e6b0cc65b1d8209cbe56e1b583720ede0631628782d3206d56cb230a24819e0.json\",\"publisher_id\":\"did:web:source-1-inky.vercel.app\",\"publisher_domain\":\"source-1-inky.vercel.app\",\"did_sha256\":\"83e00096ff50d3511530f4843a55b5aba22c8ce14e1f54dc3a82c8a9c5ee3b66\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-primary-1\",\"content_sha256\":\"9e6b0cc65b1d8209cbe56e1b583720ede0631628782d3206d56cb230a24819e0\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138},{\"source_id\":\"publisher-2\",\"authority_id\":\"urn:assurance-escrow:authority:2\",\"url\":\"https://source-2-ten.vercel.app/evidence/e6257c42dcf84e86d64b0d7c624489b218b3702444e9465be1e6e0b86da03e5b.json\",\"publisher_id\":\"did:web:source-2-ten.vercel.app\",\"publisher_domain\":\"source-2-ten.vercel.app\",\"did_sha256\":\"c3f38772e6e7449d3579b411cb414a48d108191edb50b6c611947ce051a7bf65\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-primary-2\",\"content_sha256\":\"e6257c42dcf84e86d64b0d7c624489b218b3702444e9465be1e6e0b86da03e5b\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138}],\"counterevidence\":{\"schema\":\"assurance-escrow.counterevidence/v1\",\"sources\":[{\"source_id\":\"publisher-3\",\"authority_id\":\"urn:assurance-escrow:authority:3\",\"url\":\"https://source-3-five.vercel.app/evidence/2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4.json\",\"publisher_id\":\"did:web:source-3-five.vercel.app\",\"publisher_domain\":\"source-3-five.vercel.app\",\"did_sha256\":\"147ba1d69071eb5a5faced97cf15932ee2d588b6182e5a32162731374a417464\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-counter-3\",\"content_sha256\":\"2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138},{\"source_id\":\"publisher-4\",\"authority_id\":\"urn:assurance-escrow:authority:4\",\"url\":\"https://source-4-kappa.vercel.app/evidence/067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5.json\",\"publisher_id\":\"did:web:source-4-kappa.vercel.app\",\"publisher_domain\":\"source-4-kappa.vercel.app\",\"did_sha256\":\"3f6c2551db50e0eebbd18c001d04caed92d042d38142fac783a653741484fa84\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-counter-4\",\"content_sha256\":\"067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138},{\"source_id\":\"publisher-5\",\"authority_id\":\"urn:assurance-escrow:authority:5\",\"url\":\"https://source-5-three.vercel.app/evidence/0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775.json\",\"publisher_id\":\"did:web:source-5-three.vercel.app\",\"publisher_domain\":\"source-5-three.vercel.app\",\"did_sha256\":\"0ffa0ed89a9b86599c8ed5fbc0cffd06127c15c48c088d5f7895facba1824068\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-counter-5\",\"content_sha256\":\"0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138}]}}",
+    "final_bps": 0,
+    "final_code": "",
+    "funded": "10000000000000000",
+    "issuer": "0x86640e27bb18e467ae2193a2ff680375653c69fc",
+    "last_attempt": 1792756972,
+    "locked": "10000000000000000",
+    "name": "Measured API uptime obligation",
+    "opens_at": 1792749538,
+    "outcomes_json": "[{\"code\":\"FULFILLED\",\"description\":\"Measured uptime is at least the frozen 9,990-basis-point threshold.\",\"payout_bps\":0},{\"code\":\"BREACHED\",\"description\":\"Measured uptime is below the frozen 9,990-basis-point threshold.\",\"payout_bps\":10000}]",
+    "paid": 0,
+    "provisional_amount": 0,
+    "provisional_code": "FULFILLED",
+    "recipient": "0x53705bb2b34ff7cecc93f79a1d91ada1185d87dd",
+    "returned": 0,
+    "status": 3,
+    "terminal_reason": ""
+  },
+  "final": {
+    "attempts": 1,
+    "bond": 0,
+    "challenge_reason": "Authenticated independent sources contest the provisional result.",
+    "challenge_until": 1792929772,
+    "challenger": "0x53705bb2b34ff7cecc93f79a1d91ada1185d87dd",
+    "claimed_at": 1792756932,
+    "closes_at": 1792929687,
+    "counterevidence_json": "{\"schema\": \"assurance-escrow.counterevidence/v1\", \"sources\": [{\"authority_id\": \"urn:assurance-escrow:authority:3\", \"content_sha256\": \"2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4\", \"content_version\": \"assurance-escrow-v2/uptime-counter-3\", \"did_http_status\": 200, \"did_sha256\": \"147ba1d69071eb5a5faced97cf15932ee2d588b6182e5a32162731374a417464\", \"evidence_http_status\": 200, \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_domain\": \"source-3-five.vercel.app\", \"publisher_id\": \"did:web:source-3-five.vercel.app\", \"service_path\": \"/evidence/\", \"source_id\": \"publisher-3\", \"url\": \"https://source-3-five.vercel.app/evidence/2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4.json\"}, {\"authority_id\": \"urn:assurance-escrow:authority:4\", \"content_sha256\": \"067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5\", \"content_version\": \"assurance-escrow-v2/uptime-counter-4\", \"did_http_status\": 200, \"did_sha256\": \"3f6c2551db50e0eebbd18c001d04caed92d042d38142fac783a653741484fa84\", \"evidence_http_status\": 200, \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_domain\": \"source-4-kappa.vercel.app\", \"publisher_id\": \"did:web:source-4-kappa.vercel.app\", \"service_path\": \"/evidence/\", \"source_id\": \"publisher-4\", \"url\": \"https://source-4-kappa.vercel.app/evidence/067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5.json\"}, {\"authority_id\": \"urn:assurance-escrow:authority:5\", \"content_sha256\": \"0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775\", \"content_version\": \"assurance-escrow-v2/uptime-counter-5\", \"did_http_status\": 200, \"did_sha256\": \"0ffa0ed89a9b86599c8ed5fbc0cffd06127c15c48c088d5f7895facba1824068\", \"evidence_http_status\": 200, \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_domain\": \"source-5-three.vercel.app\", \"publisher_id\": \"did:web:source-5-three.vercel.app\", \"service_path\": \"/evidence/\", \"source_id\": \"publisher-5\", \"url\": \"https://source-5-three.vercel.app/evidence/0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775.json\"}]}",
+    "criterion": "For the frozen 2026-10-20 13:50–14:50 UTC observation period, classify FULFILLED only when measured uptime is at least 99.90% (9,990 basis points); otherwise classify BREACHED. Calculate uptime from total_seconds and unavailable_seconds. Publisher outcome declarations and statement instructions are non-authoritative.",
+    "dispute_deadline": 1793016214,
+    "evidence_json": "{\"schema\":\"assurance-escrow.evidence-policy/v1\",\"obligation_id\":\"urn:assurance-escrow:obligation:assurance-escrow-v2:uptime:1792749538-1792753138\",\"observed_from\":1792749538,\"observed_until\":1792753138,\"source_rule\":{\"min_sources\":2,\"min_verified\":2,\"min_agreement\":2},\"counter_rule\":{\"min_sources\":3,\"min_verified\":3,\"min_agreement\":2},\"semantic_rule\":{\"kind\":\"uptime_bps\",\"threshold_bps\":9990,\"fulfilled_code\":\"FULFILLED\",\"breached_code\":\"BREACHED\"},\"sources\":[{\"source_id\":\"publisher-1\",\"authority_id\":\"urn:assurance-escrow:authority:1\",\"url\":\"https://source-1-inky.vercel.app/evidence/9e6b0cc65b1d8209cbe56e1b583720ede0631628782d3206d56cb230a24819e0.json\",\"publisher_id\":\"did:web:source-1-inky.vercel.app\",\"publisher_domain\":\"source-1-inky.vercel.app\",\"did_sha256\":\"83e00096ff50d3511530f4843a55b5aba22c8ce14e1f54dc3a82c8a9c5ee3b66\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-primary-1\",\"content_sha256\":\"9e6b0cc65b1d8209cbe56e1b583720ede0631628782d3206d56cb230a24819e0\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138},{\"source_id\":\"publisher-2\",\"authority_id\":\"urn:assurance-escrow:authority:2\",\"url\":\"https://source-2-ten.vercel.app/evidence/e6257c42dcf84e86d64b0d7c624489b218b3702444e9465be1e6e0b86da03e5b.json\",\"publisher_id\":\"did:web:source-2-ten.vercel.app\",\"publisher_domain\":\"source-2-ten.vercel.app\",\"did_sha256\":\"c3f38772e6e7449d3579b411cb414a48d108191edb50b6c611947ce051a7bf65\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-primary-2\",\"content_sha256\":\"e6257c42dcf84e86d64b0d7c624489b218b3702444e9465be1e6e0b86da03e5b\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138}],\"counterevidence\":{\"schema\":\"assurance-escrow.counterevidence/v1\",\"sources\":[{\"source_id\":\"publisher-3\",\"authority_id\":\"urn:assurance-escrow:authority:3\",\"url\":\"https://source-3-five.vercel.app/evidence/2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4.json\",\"publisher_id\":\"did:web:source-3-five.vercel.app\",\"publisher_domain\":\"source-3-five.vercel.app\",\"did_sha256\":\"147ba1d69071eb5a5faced97cf15932ee2d588b6182e5a32162731374a417464\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-counter-3\",\"content_sha256\":\"2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138},{\"source_id\":\"publisher-4\",\"authority_id\":\"urn:assurance-escrow:authority:4\",\"url\":\"https://source-4-kappa.vercel.app/evidence/067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5.json\",\"publisher_id\":\"did:web:source-4-kappa.vercel.app\",\"publisher_domain\":\"source-4-kappa.vercel.app\",\"did_sha256\":\"3f6c2551db50e0eebbd18c001d04caed92d042d38142fac783a653741484fa84\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-counter-4\",\"content_sha256\":\"067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138},{\"source_id\":\"publisher-5\",\"authority_id\":\"urn:assurance-escrow:authority:5\",\"url\":\"https://source-5-three.vercel.app/evidence/0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775.json\",\"publisher_id\":\"did:web:source-5-three.vercel.app\",\"publisher_domain\":\"source-5-three.vercel.app\",\"did_sha256\":\"0ffa0ed89a9b86599c8ed5fbc0cffd06127c15c48c088d5f7895facba1824068\",\"did_http_status\":200,\"service_path\":\"/evidence/\",\"content_version\":\"assurance-escrow-v2/uptime-counter-5\",\"content_sha256\":\"0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775\",\"evidence_http_status\":200,\"observed_from\":1792749538,\"observed_until\":1792753138}]}}",
+    "final_bps": 10000,
+    "final_code": "BREACHED",
+    "funded": "10000000000000000",
+    "issuer": "0x86640e27bb18e467ae2193a2ff680375653c69fc",
+    "last_attempt": 1792757053,
+    "locked": 0,
+    "name": "Measured API uptime obligation",
+    "opens_at": 1792749538,
+    "outcomes_json": "[{\"code\":\"FULFILLED\",\"description\":\"Measured uptime is at least the frozen 9,990-basis-point threshold.\",\"payout_bps\":0},{\"code\":\"BREACHED\",\"description\":\"Measured uptime is below the frozen 9,990-basis-point threshold.\",\"payout_bps\":10000}]",
+    "paid": "10000000000000000",
+    "provisional_amount": 0,
+    "provisional_code": "FULFILLED",
+    "recipient": "0x53705bb2b34ff7cecc93f79a1d91ada1185d87dd",
+    "returned": 0,
+    "status": 5,
+    "terminal_reason": "DISPUTE_RESOLVED"
+  },
+  "primaryReceipt": {
+    "agreeing_sources": 2,
+    "asserted_sources": 2,
+    "outcome_code": "FULFILLED",
+    "phase": "PRIMARY",
+    "policy_digest": "718fab9d7906f4e211c06c44014eb19e3708419369cabf2b821b8133c4f8c57e",
+    "provenance_json": "[{\"asserted_code\": \"FULFILLED\", \"authority_id\": \"urn:assurance-escrow:authority:1\", \"code\": \"FULFILLED\", \"did_digest\": \"83e00096ff50d3511530f4843a55b5aba22c8ce14e1f54dc3a82c8a9c5ee3b66\", \"error\": \"\", \"expected_digest\": \"9e6b0cc65b1d8209cbe56e1b583720ede0631628782d3206d56cb230a24819e0\", \"observed_digest\": \"9e6b0cc65b1d8209cbe56e1b583720ede0631628782d3206d56cb230a24819e0\", \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_id\": \"did:web:source-1-inky.vercel.app\", \"source_id\": \"publisher-1\", \"status\": \"VERIFIED\", \"url\": \"https://source-1-inky.vercel.app/evidence/9e6b0cc65b1d8209cbe56e1b583720ede0631628782d3206d56cb230a24819e0.json\", \"version\": \"assurance-escrow-v2/uptime-primary-1\"}, {\"asserted_code\": \"FULFILLED\", \"authority_id\": \"urn:assurance-escrow:authority:2\", \"code\": \"FULFILLED\", \"did_digest\": \"c3f38772e6e7449d3579b411cb414a48d108191edb50b6c611947ce051a7bf65\", \"error\": \"\", \"expected_digest\": \"e6257c42dcf84e86d64b0d7c624489b218b3702444e9465be1e6e0b86da03e5b\", \"observed_digest\": \"e6257c42dcf84e86d64b0d7c624489b218b3702444e9465be1e6e0b86da03e5b\", \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_id\": \"did:web:source-2-ten.vercel.app\", \"source_id\": \"publisher-2\", \"status\": \"VERIFIED\", \"url\": \"https://source-2-ten.vercel.app/evidence/e6257c42dcf84e86d64b0d7c624489b218b3702444e9465be1e6e0b86da03e5b.json\", \"version\": \"assurance-escrow-v2/uptime-primary-2\"}]",
+    "rail_id": 1,
+    "result": "VERIFIED",
+    "retrieved_at": 1792756972,
+    "round": 1,
+    "verified_sources": 2
+  },
+  "disputeReceipt": {
+    "agreeing_sources": 3,
+    "asserted_sources": 3,
+    "outcome_code": "BREACHED",
+    "phase": "DISPUTE",
+    "policy_digest": "718fab9d7906f4e211c06c44014eb19e3708419369cabf2b821b8133c4f8c57e",
+    "provenance_json": "[{\"asserted_code\": \"BREACHED\", \"authority_id\": \"urn:assurance-escrow:authority:3\", \"code\": \"BREACHED\", \"did_digest\": \"147ba1d69071eb5a5faced97cf15932ee2d588b6182e5a32162731374a417464\", \"error\": \"\", \"expected_digest\": \"2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4\", \"observed_digest\": \"2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4\", \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_id\": \"did:web:source-3-five.vercel.app\", \"source_id\": \"publisher-3\", \"status\": \"VERIFIED\", \"url\": \"https://source-3-five.vercel.app/evidence/2b923bf4a4f650bf28a93f2fd01ae7c36afc48927d821c4cafc8c42559906ba4.json\", \"version\": \"assurance-escrow-v2/uptime-counter-3\"}, {\"asserted_code\": \"BREACHED\", \"authority_id\": \"urn:assurance-escrow:authority:4\", \"code\": \"BREACHED\", \"did_digest\": \"3f6c2551db50e0eebbd18c001d04caed92d042d38142fac783a653741484fa84\", \"error\": \"\", \"expected_digest\": \"067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5\", \"observed_digest\": \"067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5\", \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_id\": \"did:web:source-4-kappa.vercel.app\", \"source_id\": \"publisher-4\", \"status\": \"VERIFIED\", \"url\": \"https://source-4-kappa.vercel.app/evidence/067cd89ccfcc7dc5160d2609702b6ed30f467015d257801a8a7942a17c8f54b5.json\", \"version\": \"assurance-escrow-v2/uptime-counter-4\"}, {\"asserted_code\": \"BREACHED\", \"authority_id\": \"urn:assurance-escrow:authority:5\", \"code\": \"BREACHED\", \"did_digest\": \"0ffa0ed89a9b86599c8ed5fbc0cffd06127c15c48c088d5f7895facba1824068\", \"error\": \"\", \"expected_digest\": \"0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775\", \"observed_digest\": \"0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775\", \"observed_from\": 1792749538, \"observed_until\": 1792753138, \"publisher_id\": \"did:web:source-5-three.vercel.app\", \"source_id\": \"publisher-5\", \"status\": \"VERIFIED\", \"url\": \"https://source-5-three.vercel.app/evidence/0deed923adab6bceeae4fbbaee7884ab8d2f2a5161aa2a8b0b3e46432c11d775.json\", \"version\": \"assurance-escrow-v2/uptime-counter-5\"}]",
+    "rail_id": 1,
+    "result": "VERIFIED",
+    "retrieved_at": 1792757053,
+    "round": 1,
+    "verified_sources": 3
+  },
+  "recipientBalance": {
+    "before": "3154000000000000000",
+    "after": "3164000000000000000",
+    "increase": "10000000000000000"
+  },
+  "accounting": {
+    "before": {
+      "bonds_locked": 0,
+      "funded": 0,
+      "locked": 0,
+      "paid": 0,
+      "returned": 0
+    },
+    "after": {
+      "bonds_locked": 0,
+      "funded": "10000000000000000",
+      "locked": 0,
+      "paid": "10000000000000000",
+      "returned": 0
+    }
+  },
+  "verifiedAt": "2026-10-23T12:05:02.703Z"
+}
+
