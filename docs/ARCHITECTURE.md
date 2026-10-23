@@ -19,6 +19,6 @@
 - Receipts persist the result, source counts, provenance, and a digest of the evidence policy plus the payout table.
 - Global accounting enforces `funded = locked + paid + returned`; settlements run under a transfer callback guard.
 
-## Schema compatibility
+## Schemas
 
-New policies use `assurance-escrow.evidence-policy/v1`, `assurance-escrow.counterevidence/v1`, and `assurance-escrow.independent-attestation/v1`. The deployed contract also accepts the frozen ProofRail v7/v1/v3 schema family solely to support evidence migration. This compatibility path does not bypass any binding, quorum, or settlement checks.
+Policies use `assurance-escrow.evidence-policy/v1`, `assurance-escrow.counterevidence/v1`, and `assurance-escrow.independent-attestation/v1`. Every evidence object must use these exact schemas.

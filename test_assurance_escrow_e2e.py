@@ -15,11 +15,6 @@ def addr(c,x):return type(c._zero())(x)
 def warp(vm,t):vm.warp(t);sys.modules["genlayer.gl"].message_raw["datetime"]=t
 def create(vm,c,a,b,evidence=None,amount=20000):vm.sender=addr(c,a);vm.value=amount;c.open_rail(addr(c,b),"January service rail","Availability is at least 99.9%",START,CLAIM_END,amount,evidence or policy(),OUTCOMES)
 
-@pytest.mark.direct
-def test_migration_accepts_the_frozen_proofrail_evidence_format(direct_vm,direct_deploy,direct_alice,direct_bob):
- c=direct_deploy("assurance_escrow.py");legacy=policy().replace("assurance-escrow.evidence-policy/v1","proofrail.evidence-policy/v7").replace("assurance-escrow.counterevidence/v1","proofrail.counterevidence/v1")
- create(direct_vm,c,direct_alice,direct_bob,legacy)
- assert c.get_counter()==1
 def mock_source(vm,s,code="BREACH",body=None,did_body=None,status=200,response=None):
  body=body or artifact(int(s["source_id"].split("-")[-1]),code);d=did_body or did(s["publisher_domain"],s["service_path"]);vm.mock_web(s["publisher_domain"]+"/.well-known/did.json",{"status":status,"body":d});vm.mock_web(s["publisher_domain"]+s["service_path"]+s["content_sha256"]+".json",{"status":status,"body":body});vm.mock_llm(".*"+s["source_id"]+".*",response or answer(code))
 def mock_all(vm,sources,codes):

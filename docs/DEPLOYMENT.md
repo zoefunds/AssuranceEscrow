@@ -1,20 +1,5 @@
 # Deployment
 
-## Current Studionet deployment
-
-| Field | Value |
-| --- | --- |
-| Network | GenLayer Studionet |
-| Chain ID | `61999` |
-| Release | `assurance-escrow-v1` |
-| Contract | `0x1Ed9a0735e29Be57698b49F4A3A3ad151FB8186f` |
-| Deployed | 2026-10-23 11:39:44 UTC |
-| Deploy transaction | `0x97648e3b7148c1437bec33affed974fd2d57c43df4542a568bc73234cccf6ee4` |
-| Consensus | `MAJORITY_AGREE` |
-| Source SHA-256 | `34bd9980587073143605e2bb555f205f3e3bb5c6e87cf815d30fb83d7fdfc168` |
-
-The deploy record is [committed evidence](../evidence/deployment.assurance-escrow-v1.studionet.json). It verifies the finalized transaction's returned contract source hash equals the local source hash.
-
 ## Deploy a new release
 
 Use a funded account and a new lowercase release ID. Never commit secret keys.
@@ -30,7 +15,7 @@ The script rejects a deployment unless it finalizes with majority consensus, has
 
 ## Run a live lifecycle
 
-The runner checks that its contract address is the address recorded for the selected release. It then validates the frozen panels, opens a 0.01 GEN rail, lodges the claim, collects the primary review, posts the exact 5% challenge bond, performs the counter review, and checks recipient payment and global accounting.
+The runner checks that its contract address is the address recorded for the selected release. It then validates the frozen panels, opens a 0.01 GEN rail, lodges the claim, collects the primary review, posts the exact 5% challenge bond, performs the counter review, and checks recipient payment and global accounting. Supply the evidence and counterevidence JSON through the named environment variables, or save them as release-specific files under the ignored `artifacts/` directory.
 
 ```bash
 ASSURANCE_ESCROW_CONTRACT_ADDRESS=... \
